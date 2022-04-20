@@ -43,9 +43,9 @@
         href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"
     />
     
-    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1650465690668">
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1650465690668">
-    <link rel="stylesheet" href="/css/style.css?v=1650465690668">
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1650467426939">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1650467426939">
+    <link rel="stylesheet" href="/css/style.css?v=1650467426939">
      
     
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -71,7 +71,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>Articles</span>10</div>
+        <div><span>Articles</span>9</div>
         <div><span>Tags</span>9</div>
         <div><span>Categories</span>0</div>
     </div>
@@ -179,14 +179,8 @@
 <li>安装hexo</li>
 </ol>
 <p>开始之前先介绍一下heox的基本命令：</p>
-<pre><code>hexo new &quot;postName&quot; #新建文章
-hexo new page &quot;pageName&quot; #新建页面
-hexo generate #生成静态页面至public目录
-hexo server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）
-hexo deploy #部署到GitHub
-hexo help  # 查看帮助
-hexo version  #查看Hexo的版本
-</code></pre>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;postName&quot;</span> <span class="meta">#新建文章</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">&quot;pageName&quot;</span> <span class="meta">#新建页面</span></span><br><span class="line">hexo generate <span class="meta">#生成静态页面至public目录</span></span><br><span class="line">hexo <span class="keyword">server</span> <span class="meta">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span></span><br><span class="line">hexo deploy <span class="meta">#部署到GitHub</span></span><br><span class="line">hexo help  <span class="meta"># 查看帮助</span></span><br><span class="line">hexo version  <span class="meta">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>对应的缩写，比如：</p>
 <p>hexo n == hexo new</p>
@@ -201,9 +195,8 @@ hexo version  #查看Hexo的版本
 <p><img src="4d32041a83bcc0a677b36f035c624b52.png"></p>
 <p>可以看到博客存放目录出现了如下内容：</p>
 <p><img src="3064ea37519ac1d1961bb56324153170.png"></p>
-<h3 id="2-生成静态网页"><a href="#2-生成静态网页" class="headerlink" title="2. 生成静态网页"></a>2. 生成静态网页</h3><pre><code>hexo g #生成静态网页
-hexo s #浏览
-</code></pre>
+<h3 id="2-生成静态网页"><a href="#2-生成静态网页" class="headerlink" title="2. 生成静态网页"></a>2. 生成静态网页</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo</span> g <span class="comment">#生成静态网页</span></span><br><span class="line">hexo s <span class="comment">#浏览</span></span><br></pre></td></tr></table></figure>
+
 <p>g后</p>
 <p><img src="2f9b0cc48521e69588e208c74cf4b5fc.png"></p>
 <p>s后</p>
@@ -219,11 +212,8 @@ hexo s #浏览
 <p>因为这个仓库名称将作为你github博客的访问地址</p>
 <p><img src="0ee3016a9624ddb86379ed5ec6d1fb2b.png"></p>
 <p>编辑_config.yml，_config.yml在博客存放目录下</p>
-<pre><code>deploy:
-  type: git
-  repository: git@github.com:Art0white/Lovsog.github.io.git
-  branch: main
-</code></pre>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repository:</span> git@github.com:Art0white/Lovsog.github.io.git</span><br><span class="line"><span class="symbol">  branch:</span> main</span><br></pre></td></tr></table></figure>
+
 <p>repository仓库地址改为自己的</p>
 <p>branch看自己的github仓库是master还是main</p>
 <p><img src="b809de3140e0f77572ebc54087e8c9ba.png"></p>
@@ -239,14 +229,8 @@ hexo s #浏览
 <p><img src="637c094a54940dd8eeb41d40f8414605.png"></p>
 <p>可以看到生成了helloworld.md文件，通过这个md文件去写博客</p>
 <p>默认的内容是这样的：</p>
-<pre><code class="markdown">---
-title: helloworld
-date: 2021-09-22 20:36:45
-tags:
----
-这里开始写正文
-&lt;!--more--&gt;
-</code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: helloworld</span><br><span class="line">date: 2021-09-22 20:36:45</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line">这里开始写正文</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+
 <p>编写好之后，开始部署到github</p>
 <blockquote>
 <p>1.生成html文件</p>
@@ -342,7 +326,7 @@ tags:
 
  
 
-<script async src="/js/app.js?v=1650465690670"></script>
+<script async src="/js/app.js?v=1650467426945"></script>
 
 
 
