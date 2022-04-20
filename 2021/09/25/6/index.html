@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>数据结构学习——串 - Lovsog&#39;s blog</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" type="image/png" />
+    <meta name="description" content="数据结构串的学习笔记🎈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构学习——串">
+<meta property="og:url" content="https://art0white.github.io/2021/09/25/6/index.html">
+<meta property="og:site_name" content="Lovsog&#39;s blog">
+<meta property="og:description" content="数据结构串的学习笔记🎈">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/6/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200428233542312.png">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/6/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/6/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200429095518165.png">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/6/20200429100023596.png">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/6/20200429101106280.png">
+<meta property="article:published_time" content="2021-09-25T05:12:32.000Z">
+<meta property="article:modified_time" content="2021-09-28T12:38:17.449Z">
+<meta property="article:author" content="Lovsog">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://art0white.github.io/2021/09/25/6/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"
+    />
+    
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1650462216429">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1650462216429">
+    <link rel="stylesheet" href="/css/style.css?v=1650462216429">
+     
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="Lovsog" class="mdui-btn mdui-btn-icon"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Lovsog">
+            <img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog" alt="Lovsog">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>10</div>
+        <div><span>Tags</span>9</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=https://art0white.github.io/" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=Y19YGK7B" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://www.bilibili.com/" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/Art0white/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web/" style="font-size: 13.33px;">web</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 16.67px;">前端</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a>
+    </div>
+    
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 Lovsog
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a href="https://icp.gov.moe/?keyword=20210704" target="_blank">萌ICP备20210704号</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-fancybox="gallery" src="https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png" alt="数据结构学习——串" loading="lazy">
+              <h1>数据结构学习——串</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年09月25日</a>
+</div>
+
+      <blockquote>
+<p>数据结构串的学习笔记🎈</p>
+</blockquote>
+<span id="more"></span>
+
+
+
+<h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h1><p><strong>串(string)</strong> : 是由多个字符组成的有限序列，又名字符串。一般记为   s=”a1a2……an”(n&gt;=0)。</p>
+<blockquote>
+<blockquote>
+<p><b>空格串（Blank string）</b>：是指包含空格的串。注意它与空串的区别，空格串是有长度的，而且可以不止一个空格;零个字符的串称为空串（Null string）,它的长度为零可以直接用  “”  表示。</p>
+</blockquote>
+<blockquote>
+<p><b>子串（SubString）与主串（PriString）</b>：串中任意个数的连续字符组成的子序列称为该串的子串，相应地，包含子串的串称为主串。<br>子串在主串中的位置就是子串的第一个字符在主串中的序号。</p>
+</blockquote>
+</blockquote>
+<h1 id="2-字符串的比较"><a href="#2-字符串的比较" class="headerlink" title="2.字符串的比较"></a>2.字符串的比较</h1><p><strong>串的比较</strong>是通过组成串的字符之间的编码来进行的，而字符的编码指的是字符在对应字符集中的序号。</p>
+<blockquote>
+<p><b>ASCII编码(7位二进制)</b></p>
+<blockquote>
+<p>常见ASCII码的大小规则：0 ~ 9 &lt; A ~ Z &lt; a ~ z。</p>
+<ol>
+<li>数字比字母要小。如 “7”&lt;“F”；</li>
+<li>数字0比数字9要小，并按0到9顺序递增。如 “3”&lt;“8” ；</li>
+<li>字母A比字母Z要小，并按A到Z顺序递增。如“A”&lt;“Z” ；</li>
+<li>同个字母的大写字母比小写字母要小32。如“A”&lt;“a” 。<br>
+几个常见字母的ASCII码大小： “A”为65；“a”为97；“0”为 48</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><b>Unicode编码(16位二进制)</b><br>前256个字符与ASCII码完全相同。</p>
+</blockquote>
+<p>对于两个不相等的串，判定它们大小的方法：</p>
+<p>给定两个串：s=”a1a2……an” , t=”b1b2……bm”,当满足以下条件之一时，s&lt;t。</p>
+<ol>
+<li><p>n&lt;m,且ai = bi (i=1,2,……,n)。<br>例如但s=”hap”,t=”happy”,就有s&lt;t。因为t比s多出了两个字母。</p>
+</li>
+<li><p>存在某个k&lt;=min(m,n),使得ai=bi (i=1,2,……,k-1), ak&lt;bk。<br>例如当s=”heppen”,t=”happy”,因为两串的前4个字母均相同,而两串第5个字母(k值),字母e的ASCII码是101,而字母y的ASCII码是121,显然e&lt;y,所以s&lt;t。</p>
+<h1 id="3-串的抽象数据类型"><a href="#3-串的抽象数据类型" class="headerlink" title="3.串的抽象数据类型"></a>3.串的抽象数据类型</h1><blockquote>
+<p>ADT $~~~$串（string)<br>Data<br>$~~~~~~$串中元素仅由一个字符组成，相邻元素具有前驱和后继关系。<br>Operation </p>
+<ul>
+<li>$~~~~~~$StrAssign(T,*chars):生成一个其值等于字符串常量chars的串。</li>
+<li>$~~~~~~$StrCopy(T,S):串S存在，由串S复制得串T.</li>
+<li>$~~~~~~$ClearString(S):串S存在，将串清空。</li>
+<li>$~~~~~~$StringEmpty(S):若串S为空，返回true,否则返回false. </li>
+<li>$~~~~~~$StrLength(S):返回串S的元素个数，即串的长度。</li>
+<li>$~~~~~~$StrCompare(S,T):若S&gt;T,返回值＞0,若S=T,返回0,若S&lt;T,返回值＜0 </li>
+<li>$~~~~~~$Concat(T,S1,S2):用T返回由S1和S2联接而成的新串。</li>
+<li>$~~~~~~$SubString(Sub,S,pos,len):串S存在，1≤pos≤StrLength(s). 且0≤len≤StrLength(S)-pos+1,用Sub返 回串S的第pos 个字符起长度为len的子串。</li>
+<li>$~~~~~~$Index(S,T,pos):串S和T存在，T是非空串，1≤pos≤StrLength(s).若主串S中存在和串T值相同的子串，则返回它在主串S中第pos 个字符之后第一次出现的位置，否则返回0.</li>
+<li>$~~~~~~$Replace(S,T,V):串S、T和V存在，T是非空串。用V替换主串S中出现的所有与T相等的不重叠的子串。</li>
+<li>$~~~~~~$StrInsert(S,pos,T):串S和T存在，1≤pos≤StrLength(S)+1.在串S的第pos个字符之前插入串T.</li>
+<li>$~~~~~~$StrDelete(S,pos,len):串S存在，1≤pos≤StrLength(S)-len+1.从串S中删除第pos 个字符起长度为len的子串。<br>endADT </li>
+</ul>
+</blockquote>
+<h1 id="4-串的储存结构"><a href="#4-串的储存结构" class="headerlink" title="4.串的储存结构"></a>4.串的储存结构</h1><p>串的存储结构分为两种：顺序存储结构、链式存储结构</p>
+<h3 id="4-1串的顺序存储结构"><a href="#4-1串的顺序存储结构" class="headerlink" title="4.1串的顺序存储结构"></a>4.1串的顺序存储结构</h3></li>
+<li><p>静态顺序存储结构——<strong>数组</strong><br>一组地址连续的存储单元来存储串中的字符序列的。按照预定义的大小，为每个定义的串变量分配一个固定长度的存储区。<br><img data-fancybox="gallery" src="watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"><br> 优点：使用方便 ，查询效率比链表高，内存为一连续的区域 </p>
+<p> 缺点：大小固定，不适合动态存储，不方便动态添加</p>
+</li>
+<li><p>动态顺序存储结构——<strong>堆</strong></p>
+</li>
+</ol>
+<ul>
+<li>C语言：由动态分配函数malloc()和 free() 管理</li>
+<li>C++：使用new() 和 delete()</li>
+<li>Java：ArrayList()<br>$~~~~~~~~~~~~~~~~$| get $~~~~~~~~~~~~~~~~~$从里面拿东西<br>$~~~~~~~~~~~~~~~~$| add    $~~~~~~~~~~~~~~~~$向里面加东西，返回值代表是否成功；<br>$~~~~~~~~~~~~~~~~$| remove $~~~~~~~~~~~$从里面删除东西<br>$~~~~~~~~~~~~~~~~$| size    $~~~~~~~~~~~~~~~~$获取集合的长度<h3 id="4-2串的链式存储结构"><a href="#4-2串的链式存储结构" class="headerlink" title="4.2串的链式存储结构"></a>4.2串的链式存储结构</h3><img data-fancybox="gallery" src="https://img-blog.csdnimg.cn/20200428233542312.png" alt="![在这里插入图片描述](https://img-blog.csdnimg.cn/2020042823345932.png" data-caption="![在这里插入图片描述](https://img-blog.csdnimg.cn/2020042823345932.png" loading="lazy"><br>串的链式存储结构除了在连接串与串操作时有一定方便之外，总的来说不如顺序存储灵活，性能也不如顺序存储结构好。</li>
+</ul>
+<pre><code class="c">/*尾排链表*/
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+struct ListNode&#123;
+    int data;
+    struct ListNode *next;
+&#125;;
+
+struct ListNode * createList()&#123;
+    struct ListNode * head = NULL;
+    struct ListNode * prev = NULL;
+    struct ListNode * cur = NULL;
+    int temp,count = 1;
+    
+    scanf(&quot;%d&quot;,&amp;temp);
+    
+    while(temp != -1)&#123;
+        if(count == 1)&#123;
+            head = (struct ListNode*)malloc(sizeof(struct ListNode));
+            head-&gt;data = temp;
+            prev = head;
+            cur = head;
+        &#125;else&#123;
+            prev = (struct ListNode*)malloc(sizeof(struct ListNode));
+            prev-&gt;data = temp;
+            cur-&gt;next = prev;
+            cur = prev;
+        &#125;
+        count++;
+        scanf(&quot;%d&quot;,&amp;temp);
+    &#125; 
+    cur-&gt;next = NULL;
+    
+    return head;
+&#125;
+
+void scanList(struct ListNode *head) &#123;
+    struct ListNode *p = head;
+    while(p != NULL) &#123;
+        printf(&quot;%d\t&quot;,p-&gt;data);
+        p=p-&gt;next;
+    &#125;
+    return;
+&#125;
+
+int main(void)&#123;
+    struct ListNode *head = createList();
+    scanList(head);    
+    return 0;
+&#125; 
+</code></pre>
+<h1 id="5-朴素的模式匹配算法（BF匹配模式）"><a href="#5-朴素的模式匹配算法（BF匹配模式）" class="headerlink" title="5.朴素的模式匹配算法（BF匹配模式）"></a>5.朴素的模式匹配算法（BF匹配模式）</h1><h3 id="5-1思路"><a href="#5-1思路" class="headerlink" title="5.1思路"></a>5.1思路</h3><hr>
+<ul>
+<li>从主串的第一位开始和子串第一位比较。</li>
+<li>如果相同，继续比较子串和主串的下一位，如果将子串比较完毕都成功，说明匹配成功，子串在主串第一位。</li>
+<li>如果中间有一个不匹配，i回退到上次匹配首位的下一位，j回退到0。</li>
+</ul>
+<hr>
+<h3 id="5-2图示"><a href="#5-2图示" class="headerlink" title="5.2图示"></a>5.2图示</h3><p><img data-fancybox="gallery" src="watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></p>
+<h3 id="5-3代码展示"><a href="#5-3代码展示" class="headerlink" title="5.3代码展示"></a>5.3代码展示</h3><pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+/*
+S[]为主串
+T[]为子串
+*/
+
+int Index(char S[],char T[],int pos)
+&#123;
+    int i = pos;                        /*i用于王串S中当前位置下标，若pos不为1*/
+                                        /*则从pos 位置开始匹配*/
+    int j = 0;                          /*j用于子串T中当前位置下标值*/
+    while(i &lt; strlen(S) &amp;&amp; j &lt; strlen(T))       /*若i小于S长度且j小于T的长度时循环*/
+    &#123;
+        if(S[i]==T[j])                      /*两字母相等则继续*/
+        &#123;
+            i++;
+            j++;
+        &#125;
+        else              /*指针后退重新开始匹配*/
+           &#123;
+            i=i-j+1;       /*i退回到上次匹配首位的下一位*/
+            j = 0; 
+        &#125;
+    &#125;
+    if(j == strlen(T))
+        return i - strlen(T) + 1;
+    else
+        return 0;
+&#125;
+int main() 
+&#123;
+    char a[]=&quot;ababcabcacbab&quot;;
+    char b[]=&quot;abcac&quot;;
+    int number = Index(a ,b ,0);
+    printf(&quot;%d&quot;,number);
+    return 0;
+&#125;
+</code></pre>
+<h1 id="6-KMP模式匹配算法"><a href="#6-KMP模式匹配算法" class="headerlink" title="6.KMP模式匹配算法"></a>6.KMP模式匹配算法</h1><p>即  克努特—莫里斯—普拉特算法。</p>
+<p><img data-fancybox="gallery" src="watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"><br>还是同BP匹配算法<br>S[ ]为主串，T[ ]为子串。</p>
+<h3 id="6-1-next函数"><a href="#6-1-next函数" class="headerlink" title="6.1 next函数"></a>6.1 next函数</h3><p>我们把T串各个位置的j值的变化定义为一个数组next，那么next的长度就是T串的长度。于是我们可以得到下面的函数定义：<br><img data-fancybox="gallery" src="https://img-blog.csdnimg.cn/20200429095518165.png" alt="![在这里插入图片描述](https://img-blog.csdnimg.cn/20200429094617402.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubm" data-caption="![在这里插入图片描述](https://img-blog.csdnimg.cn/20200429094617402.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubm" loading="lazy"></p>
+<h3 id="6-2-next函数推导"><a href="#6-2-next函数推导" class="headerlink" title="6.2 next函数推导"></a>6.2 next函数推导</h3><p>S=”abcababca”</p>
+<ul>
+<li><em><strong>例1</strong></em>：<br>T=”abcdex”<br><img data-fancybox="gallery" src="20200429100023596.png" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></li>
+</ul>
+<ol>
+<li>当j=1时，next[1]=0;</li>
+<li>当j=2时，j由1到j-1就只有字符”a”，属于其他情况，next[2]=1；</li>
+<li>当j=3时，j由1到j-1串是”ab”，显然”a”与”b”不相等，属于其他情况，next[3]=1；</li>
+<li>以后同理，所以最终此T串的next[j]为011111。</li>
+</ol>
+<ul>
+<li><em><strong>例二</strong></em>：<br>T=”abcabx”<br><img data-fancybox="gallery" src="20200429101106280.png" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></li>
+</ul>
+<ol>
+<li>当j=1时，next[1]=0;</li>
+<li>当j=2时，同上例说明，next[2]=1;</li>
+<li>当j=3时，同上，next[3]=1; </li>
+<li>当j=4时，同上，next[4]=1;</li>
+<li>当j=5时，此时j由1到j-1的串是”<u>a</u>bc<em>a</em>“，前缀字符”a”与后缀字符”a”相等（前缀用下划线表示，后缀用斜体表示），因此可推算出k值为（由’p1…pk-1’=’pj-k+1…pj-1’，得到p1=p4），因此next[5]=2;</li>
+<li>当j=6时，j由1到j-1的串是”<u>ab</u>cab”，由于前缀字符”ab”与后缀”ab”相等，所以next[6]=3。</li>
+</ol>
+<p><strong>我们可以根据经验得：如果前后缀一个字符相等，k值是2，两个字符k值是3，n个相等k值就是n+1。</strong></p>
+<h3 id="6-3-KMP模式匹配算法实现"><a href="#6-3-KMP模式匹配算法实现" class="headerlink" title="6.3 KMP模式匹配算法实现"></a>6.3 KMP模式匹配算法实现</h3><p><strong>代码展示</strong></p>
+<pre><code class="c">/*通过计算返回子串s的next数组*/
+
+void get_next(char T[], int *next)
+&#123;
+    int i, j;
+     i = 1;
+     j = 0;
+     next[1] = 0;
+     while(i &lt; T[0])/*T[0]表示串t的长度*/
+     &#123;
+          if(j == 0 || T[i] == T[j])/*T[j]表示前缀的单个字符,T[i]表示后缀的单个字符 */
+          &#123;
+               ++ i;
+               ++ j;
+               next[i] = j;
+          &#125;
+          else
+               j = next[j];/*若字符不相同，则j值回溯*/
+     &#125;
+ &#125;
+</code></pre>
+<pre><code class="c">/*返回子串T在主串S中第pos个字符之后的位置。若不存在，则函数值返回0*/
+/*s非空， 1 &lt;= pos &lt;= strlen(S)*/
+int Index_KMP(char S[], char T[], int pos)
+&#123;
+    int i = pos;
+ 
+     int j = 1;
+ 
+     int next[255];
+ 
+     get_next(T, next);
+     while (i &lt;= S[0] &amp;&amp; j &lt;= T[0])
+     &#123;
+          if(j == 0 || S[i] == T[j])
+          &#123;
+               ++ i;
+               ++ j;
+          &#125;
+          else
+           j = next[j];
+   
+     &#125;
+     if(j &gt; T[0])
+          return i-T[0];
+     else 
+          return 0;
+ 
+</code></pre>
+<h3 id="6-4-KMP模式匹配算法改进"><a href="#6-4-KMP模式匹配算法改进" class="headerlink" title="6.4 KMP模式匹配算法改进"></a>6.4 KMP模式匹配算法改进</h3><p>为避免KMP模式匹配算法的多次回溯匹配（例：主串s = “aaaabcde”, 子串 t = “ aaaaax”），我们需对原来的KMP模式匹配算法加以改进。</p>
+<p><strong>代码展示</strong></p>
+<pre><code class="c">void get_nextval(char T[], int *nextval)
+&#123;
+    int i, j;
+     i = 1;
+      j = 0;
+      nextval[1] = 0;
+      while(i &lt; T[0])/*T[0]表示串t的长度*/
+      &#123;
+          if(j == 0 || T[i] == T[j])/*T[j]表示前缀的单个字符,T[i]表示后缀的单个字符 */
+           &#123;
+                  ++ i;
+                  ++ j;
+                  if(T[i] != T[j])
+                      nextval[i] = j;
+                  else
+                      nextval[i] = nextval[j];
+            &#125;
+            else
+                j = nextval[j];/*若字符不相同，则j值回溯*/
+      &#125;
+ &#125;
+</code></pre>
+<p>实现匹配算法，只需要将 get_next(T, next) 改为 get_nextval(T, next)。</p>
+<h3 id="6-5-nextval数组值推导"><a href="#6-5-nextval数组值推导" class="headerlink" title="6.5 nextval数组值推导"></a>6.5 nextval数组值推导</h3>
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>Lovsog<br>
+        <strong>Link：</strong><a href="https://art0white.github.io/2021/09/25/6/" title="https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;6&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;6&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'cd32a33ff05bd3a4103e',
+        clientSecret: 'a77888ad29571106661241bdb6ae255e2f00ae08',
+        id: window.location.pathname,
+        repo: 'art0white.github.io',
+        owner: 'Art0white',
+        admin: 'Art0white'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">2.</span> <span class="toc-text">2.字符串的比较</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%B2%E7%9A%84%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">3.串的抽象数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%B2%E7%9A%84%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-number">4.</span> <span class="toc-text">4.串的储存结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1%E4%B8%B2%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1串的顺序存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E4%B8%B2%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">4.0.2.</span> <span class="toc-text">4.2串的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%9C%B4%E7%B4%A0%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%EF%BC%88BF%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">5.朴素的模式匹配算法（BF匹配模式）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1%E6%80%9D%E8%B7%AF"><span class="toc-number">5.0.1.</span> <span class="toc-text">5.1思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2%E5%9B%BE%E7%A4%BA"><span class="toc-number">5.0.2.</span> <span class="toc-text">5.2图示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA"><span class="toc-number">5.0.3.</span> <span class="toc-text">5.3代码展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">6.KMP模式匹配算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-next%E5%87%BD%E6%95%B0"><span class="toc-number">6.0.1.</span> <span class="toc-text">6.1 next函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-next%E5%87%BD%E6%95%B0%E6%8E%A8%E5%AF%BC"><span class="toc-number">6.0.2.</span> <span class="toc-text">6.2 next函数推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.0.3.</span> <span class="toc-text">6.3 KMP模式匹配算法实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%94%B9%E8%BF%9B"><span class="toc-number">6.0.4.</span> <span class="toc-text">6.4 KMP模式匹配算法改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-nextval%E6%95%B0%E7%BB%84%E5%80%BC%E6%8E%A8%E5%AF%BC"><span class="toc-number">6.0.5.</span> <span class="toc-text">6.5 nextval数组值推导</span></a></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1650462216436"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

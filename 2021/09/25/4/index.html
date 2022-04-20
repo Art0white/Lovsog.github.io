@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>数据结构学习——排序 - Lovsog&#39;s blog</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" type="image/png" />
+    <meta name="description" content="排序笔记🎈，排序很重要呀！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构学习——排序">
+<meta property="og:url" content="https://art0white.github.io/2021/09/25/4/index.html">
+<meta property="og:site_name" content="Lovsog&#39;s blog">
+<meta property="og:description" content="排序笔记🎈，排序很重要呀！">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/4/20200416231443359.gif#pic_center">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/4/20200416234753807.gif#pic_center">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/4/20200428174150521.gif#pic_center">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/4/2020042817422312.gif#pic_center">
+<meta property="og:image" content="https://art0white.github.io/2021/09/25/4/20200428174302397.gif#pic_center">
+<meta property="article:published_time" content="2021-09-25T05:07:51.000Z">
+<meta property="article:modified_time" content="2021-09-28T12:37:53.782Z">
+<meta property="article:author" content="Lovsog">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://art0white.github.io/2021/09/25/4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"
+    />
+    
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1650462216441">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1650462216441">
+    <link rel="stylesheet" href="/css/style.css?v=1650462216441">
+     
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="Lovsog" class="mdui-btn mdui-btn-icon"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Lovsog">
+            <img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog" alt="Lovsog">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>10</div>
+        <div><span>Tags</span>9</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=https://art0white.github.io/" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=Y19YGK7B" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://www.bilibili.com/" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/Art0white/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web/" style="font-size: 13.33px;">web</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 16.67px;">前端</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a>
+    </div>
+    
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 Lovsog
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a href="https://icp.gov.moe/?keyword=20210704" target="_blank">萌ICP备20210704号</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-fancybox="gallery" src="https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png" alt="数据结构学习——排序" loading="lazy">
+              <h1>数据结构学习——排序</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年09月25日</a>
+</div>
+
+      <blockquote>
+<p>排序笔记🎈，排序很重要呀！</p>
+</blockquote>
+<span id="more"></span>
+
+
+
+<h2 id="复杂度比较"><a href="#复杂度比较" class="headerlink" title="复杂度比较"></a>复杂度比较</h2><table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度（平均）</th>
+<th>时间复杂度(最坏)</th>
+<th>时间复杂度(最好)</th>
+<th>空间复杂度</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>冒泡排序</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n^1.5)</td>
+<td>O(n²)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(n log₂ n)</td>
+<td>O(n²)</td>
+<td>O(n log₂ n)</td>
+<td>O(n log₂ n)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(n log₂ n)</td>
+<td>O(n log₂ n)</td>
+<td>O(n log₂ n)</td>
+<td>O(n)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(n log₂ n)</td>
+<td>O(n log₂ n)</td>
+<td>O(n log₂ n)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+</tbody></table>
+<p><img data-fancybox="gallery" src="watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4ODc0MjE3,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></p>
+<h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h1><h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><ul>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。<h3 id="动画演示"><a href="#动画演示" class="headerlink" title="动画演示"></a>动画演示</h3><img data-fancybox="gallery" src="20200416231443359.gif#pic_center" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"><h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3>```c<br>#include&lt;stdio.h&gt;<br>/*<br>函数功能：冒泡排序<br>函数参数：<br>a:目标数组<br>n:数组内元素个数</li>
+</ul>
+<p> */<br>void BuddleSort(int a[],int n) {<br>    for(int i=0 ; i&lt;n ; i++){<br>        for(int j=0 ; j&lt;n-i-1 ; j++){<br>            if(a[j]&gt;a[j+1]){<br>                int swap=a[j];<br>                a[j]=a[j+1];<br>                a[j+1]=swap;<br>            }<br>        }<br>    }<br>}<br>int main(void) {<br>    int a[]={6, 9, 8, 4, 5, 2, 1, 3, 7};<br>    int n=sizeof(a)/sizeof(int);<br>    BuddleSort(a,n);<br>    printf(“冒泡排序结果：”);</p>
+<pre><code>for (int i = 0 ; i &lt; n ; i++)&#123;
+    printf(&quot;%d &quot;, a[i]);
+&#125;
+return 0;
+</code></pre>
+<p>}</p>
+<pre><code># 2.简单选择排序
+### 算法步骤
+- 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置 。
+- 再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。
+- 重复第二步，直到所有元素均排序完毕。
+
+### 动画演示
+![在这里插入图片描述](2020041623471087.gif#pic_center)
+### 代码演示
+```c
+#include&lt;stdio.h&gt;
+/* 
+函数功能：简单选择排序
+函数参数：
+a:目标数组 
+n:数组内元素个数
+ */
+void SelectSort(int a[],int n) &#123;
+    for(int i=0;i&lt;n-1;i++)&#123;
+        int min=i;  //存放数组最小值的位置 
+        for(int j=i+1;j&lt;n;j++)&#123;
+            if(a[j]&lt;a[min])&#123;
+                min=j;   //找出最小值，并记录位置 
+            &#125;
+        &#125;
+             if(min!=i) &#123;//最小元素与第i个元素互换位置 
+                int swap=a[min];
+                 a[min]=a[i];
+                 a[i]=swap;
+        &#125;
+    &#125;
+&#125;
+int main(void) &#123;
+    int a[]=&#123;8,9,7,1,5,4,2,3,6&#125;;
+    int n=sizeof(a)/sizeof(int);
+    SelectSort(a,n);
+     printf(&quot;选择排序结果：&quot;);
+    for (int i = 0; i &lt; n; i++)&#123;
+        printf(&quot;%d &quot;, a[i]);
+    &#125;
+    printf(&quot;\n&quot;);
+    return 0;
+&#125;
+</code></pre>
+<h1 id="3-直接插入排序"><a href="#3-直接插入排序" class="headerlink" title="3.直接插入排序"></a>3.直接插入排序</h1><h3 id="算法步骤-1"><a href="#算法步骤-1" class="headerlink" title="算法步骤"></a>算法步骤</h3><ul>
+<li>从第一个元素开始，该元素可以认为已经被排序；</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置；</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</li>
+<li>将新元素插入到该位置后；</li>
+<li>重复步骤2~5，直到所有元素完成排序。<h3 id="动画演示-1"><a href="#动画演示-1" class="headerlink" title="动画演示"></a>动画演示</h3><img data-fancybox="gallery" src="20200416234753807.gif#pic_center" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"><h3 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h3>```c<br>#include&lt;stdio.h&gt;<br>/*<br>函数功能：直接插入排序<br>函数参数：<br>a:目标数组<br>n:数组内元素个数</li>
+</ul>
+<p> */<br>void InsertSort(int a[],int n) {<br>    for(int i=0 ; i&lt;n ; i++) {<br>        int j=i-1;<br>        if(a[i]&lt;a[i-1]) { //若第i个元素小于第i-1个元素,移动有序序列插入——大于的话则直接插入<br>            int swap=a[i];  //存储将要排序的元素<br>            a[i]=a[i-1];   //向后移动一个元素 </p>
+<pre><code>        while(swap &lt; a[j]) &#123;//查询将要插入的位置
+            a[j+1]=a[j];
+            j--;       //元素后移 
+        &#125;
+          a[j+1]=swap;//循环结束 插入到指定位置 
+    &#125;    
+&#125;
+</code></pre>
+<p>}<br>int main(void) {<br>    int a[] = { 9,7,8,2,5,1,3,6,4};<br>    int n = sizeof(a)/sizeof(int);<br>    InsertSort(a, n);<br>    printf(“排序好的数组为：”);<br>    for (int i=0 ; i&lt;n ; i++) {<br>        printf(“%d”, a[i]);<br>    }<br>    printf(“\n”);<br>    return 0;<br>}</p>
+<pre><code># 4.希尔排序
+### 算法步骤
+- 选择一个增量序列 t1，t2，……，tk，其中 ti &gt; tj, tk = 1。
+- 按增量序列个数 k，对序列进行 k 趟排序。
+- 每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。
+### 动画演示
+![在这里插入图片描述](20200428174020945.gif#pic_center)
+
+### 代码演示
+```c
+#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+/* 
+函数功能：希尔排序
+函数参数：
+a:动态定义数组，同目标数组
+len:数组内元素个数（通过输入到的a元素个数来确定len的值）
+ */
+void Shell_sort(int *a, int len)
+&#123;
+    int i;
+    int j;
+    int temp;  
+    int gap;  //步长
+    for (gap = len / 2; gap &gt;= 1; gap /= 2) &#123;  // 步长初始化为数组长度的一半，每次遍历后步长减半
+        for (i = 0 + gap; i &lt; len; i += gap) &#123;   //对步长为gap的元素进行直插排序，当gap为1时，就是直插排序
+            temp = a[i];  //备份a[i]的值
+            j = i - gap;  //j初始化为i的前一个元素（与i相差gap长度）
+            while (j &gt;= 0 &amp;&amp; a[j] &gt; temp) &#123;
+                a[j + gap] = a[j];  //将在a[i]前且比temp的值大的元素向后移动一位
+                j -= gap;
+            &#125;
+            a[j + gap] = temp; 
+        &#125;
+    &#125;
+&#125;
+
+int main(void)
+&#123;
+    int i;
+    int len;
+    int * a;
+    printf(&quot;请输入要排的数的个数：&quot;);
+    scanf(&quot;%d&quot;,&amp;len);
+    a = (int *)malloc(len * sizeof(int)); // 动态定义数组
+    printf(&quot;请输入要排的数：\n&quot;);
+    for (i = 0; i &lt; len; i++) &#123;    //数组值的输入
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    &#125;   
+    Shell_sort(a, len);    //调用希尔排序函数
+    printf(&quot;希尔升序排列后结果为：\n&quot;);
+    for (i = 0; i &lt; len; i++) &#123;   //排序后的结果的输出
+        printf(&quot;%d\t&quot;,a[i]);
+    &#125;
+    printf(&quot;\n&quot;);
+
+    return 0;
+&#125;
+</code></pre>
+<h1 id="5-归并排序"><a href="#5-归并排序" class="headerlink" title="5.归并排序"></a>5.归并排序</h1><h3 id="算法步骤-2"><a href="#算法步骤-2" class="headerlink" title="算法步骤"></a>算法步骤</h3><ul>
+<li>把长度为n的输入序列分成两个长度为n/2的子序列。</li>
+<li>对这两个子序列分别采用归并排序。</li>
+<li>将两个排序好的子序列合并成一个最终的排序序列。<h3 id="动画演示-2"><a href="#动画演示-2" class="headerlink" title="动画演示"></a>动画演示</h3><img data-fancybox="gallery" src="20200428174150521.gif#pic_center" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></li>
+</ul>
+<h3 id="代码演示-2"><a href="#代码演示-2" class="headerlink" title="代码演示"></a>代码演示</h3><h6 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h6><pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+/* 
+函数功能：合并
+函数参数：
+ arr: 目标数组
+ start: 待合并段开始下标
+ mid: 待合并段中间下标
+ end: 待合并段结束下标
+ */
+void merge(int* arr, int start, int mid, int end)
+&#123;
+    int len_l, len_r; //左右待合并区间的长度
+    len_l = mid - start + 1;
+    len_r = end - mid;
+    int l[len_l], r[len_r]; //gcc, 两个临时数组，分别保存待合并的两个区间
+    //int l[100], r[100]; //vc
+    memcpy(l, arr + start, sizeof(int) * len_l);
+    memcpy(r, arr + mid + 1, sizeof(int) * len_r);
+
+    int i = 0, j = 0, k = start;
+    while(i &lt; len_l &amp;&amp; j &lt; len_r)
+    &#123;
+        arr[k++] = l[i] &lt; r[j] ? l[i++] : r[j++];
+    &#125;
+
+    while(i &lt; len_l)
+    &#123;
+        arr[k++] = l[i++];
+    &#125;
+&#125;
+
+/* 
+函数功能：归并排序
+函数参数：
+ arr: 待排序的数组
+ start: 待排序数组开始下标
+ end: 待排序数组结束下标
+ */
+void merge_sort(int* arr, int start, int end)
+&#123;
+    if(start &lt; end)
+    &#123;
+        int mid = (start + end) / 2;
+        //归
+        merge_sort(arr, start, mid);
+        merge_sort(arr, mid + 1, end);
+        //并
+        merge(arr, start, mid, end);
+    &#125;
+&#125;
+
+int main()
+&#123;
+    int arr[11] = &#123;-1, 2, 4, -12, 4, 0, 0, 12, 23, -4, 7000&#125;;
+    merge_sort(arr, 0, 10);
+    for(int i = 0; i &lt; 11; ++i)
+    &#123;
+        printf(&quot;%d &quot;, arr[i]);
+    &#125;
+    printf(&quot;\n&quot;);
+    return 0;
+&#125;
+</code></pre>
+<h6 id="非递归实现"><a href="#非递归实现" class="headerlink" title="非递归实现"></a>非递归实现</h6><pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+/* 
+函数功能：归并排序
+函数参数：
+ arr: 待排序的数组
+ length: 该数组的长度
+ */
+void merge_sort(int* arr, int length)
+&#123;
+    int step = 1; //归并区间步长
+    int l[length], r[length]; //gcc, 两个临时数组，分别保存待归并的两个区间
+    //int l[100], r[100]; //vc
+    while(step &lt; length)
+    &#123;
+        int start = 0; //归并区间的开始下标
+        while(start &lt; length - step)
+        &#123;
+            //归
+            int len_l, len_r; //左右待归并区间的长度
+            len_l = len_r = step;
+            memcpy(l, arr + start, sizeof(int) * len_l);
+            if(start + 2 * step &gt; length)
+            &#123;
+                len_r = length - start - step;
+            &#125;
+            memcpy(r, arr + start + step, sizeof(int) * len_r);
+            //并
+            int i = 0, j = 0, k = start;
+            while(i &lt; len_l &amp;&amp; j &lt; len_r)
+            &#123;
+                arr[k++] = l[i] &lt; r[j] ? l[i++] : r[j++];
+            &#125;
+            while(i &lt; len_l)
+            &#123;
+                arr[k++] = l[i++];
+            &#125;
+
+            start += 2 * step;
+        &#125;
+        step *= 2;
+    &#125;
+&#125;
+
+int main()
+&#123;
+    int arr[11] = &#123;-1, 2, 4, -12, 4, 0, 0, 12, 23, -4, 7000&#125;;
+    merge_sort(arr, 11);
+    for(int i = 0; i &lt; 11; ++i)
+    &#123;
+        printf(&quot;%d &quot;, arr[i]);
+    &#125;
+    printf(&quot;\n&quot;);
+    return 0;
+&#125;
+</code></pre>
+<h1 id="6-快速排序"><a href="#6-快速排序" class="headerlink" title="6.快速排序"></a>6.快速排序</h1><h3 id="算法步骤-3"><a href="#算法步骤-3" class="headerlink" title="算法步骤"></a>算法步骤</h3><ul>
+<li>从数列中挑出一个元素，称为 “基准”（pivot）。</li>
+<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作 。</li>
+<li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序 。<h3 id="动画演示-3"><a href="#动画演示-3" class="headerlink" title="动画演示"></a>动画演示</h3><img data-fancybox="gallery" src="2020042817422312.gif#pic_center" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></li>
+</ul>
+<h3 id="代码演示-3"><a href="#代码演示-3" class="headerlink" title="代码演示"></a>代码演示</h3><pre><code class="c">#include &lt;stdio.h&gt; 
+#include &lt;string.h&gt; 
+int a[100 + 1]; 
+/* 
+函数功能：快速排序
+函数参数：
+l:1
+r:数组内元素个数
+a:目标数组
+ */
+void quickSort(int l, int r, int a[]) &#123; 
+    int i = l, j = r; int mid = (i + r) / 2; 
+    do &#123;
+        while (a[i] &lt; a[mid]) ++i;//循环结束时，a[i] &gt;= a[mid] 
+        while (a[mid] &lt; a[j]) --j;//循环结束时，a[j] &lt;= a[mid] 
+            if (i &lt;= j) &#123; 
+                int temp = a[i]; 
+                a[i] = a[j]; 
+                a[j] = temp; ++i; --j;//交换数值后继续搜索 
+            &#125; 
+    &#125; while (i &lt;= j);//我们需要结束时i &gt; j 
+    if (l &lt; j) quickSort(l, j, a);
+    //若未找到两个数的边界，则递归搜索左右区间。l &lt; j则j - l &gt; 0 
+    //即l与j之间还有数字可以继续 
+    if (i &lt; r) quickSort(i, r, a);
+&#125;
+int main(void) &#123; 
+    int n; 
+    memset(a, 0, sizeof(a)); 
+    printf(&quot;请输入你要排序多少个数：&quot;); 
+    scanf(&quot;%d&quot;, &amp;n); printf(&quot;\n请输入这%d个数字\n&quot;, n); 
+    for (int i = 1; i &lt;= n; ++i) &#123; 
+        scanf(&quot;%d&quot;, a + i); 
+    &#125; 
+    quickSort(1, n, a); 
+    for (int i = 1; i &lt;= n; ++i) &#123; 
+        printf(&quot;%d &quot;, a[i]); 
+    &#125;
+    printf(&quot;\n&quot;); 
+    return 0; 
+&#125;
+</code></pre>
+<h1 id="7-堆排序"><a href="#7-堆排序" class="headerlink" title="7.堆排序"></a>7.堆排序</h1><h3 id="算法步骤-4"><a href="#算法步骤-4" class="headerlink" title="算法步骤"></a>算法步骤</h3><ul>
+<li>将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；</li>
+<li>将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；</li>
+<li>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。</li>
+<li>不断重复过程3直到有序区的元素个数为n-1（无序堆为的元素个数为1），则整个排序过程完成。<h3 id="动画演示-4"><a href="#动画演示-4" class="headerlink" title="动画演示"></a>动画演示</h3><img data-fancybox="gallery" src="20200428174302397.gif#pic_center" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></li>
+</ul>
+<h3 id="代码演示-4"><a href="#代码演示-4" class="headerlink" title="代码演示"></a>代码演示</h3><pre><code class="c">
+</code></pre>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>Lovsog<br>
+        <strong>Link：</strong><a href="https://art0white.github.io/2021/09/25/4/" title="https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;4&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;4&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'cd32a33ff05bd3a4103e',
+        clientSecret: 'a77888ad29571106661241bdb6ae255e2f00ae08',
+        id: window.location.pathname,
+        repo: 'art0white.github.io',
+        owner: 'Art0white',
+        admin: 'Art0white'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%AF%94%E8%BE%83"><span class="toc-number">1.</span> <span class="toc-text">复杂度比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number"></span> <span class="toc-text">1.冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">0.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E6%BC%94%E7%A4%BA"><span class="toc-number">0.2.</span> <span class="toc-text">动画演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA"><span class="toc-number">0.3.</span> <span class="toc-text">代码演示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number"></span> <span class="toc-text">3.直接插入排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4-1"><span class="toc-number">0.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E6%BC%94%E7%A4%BA-1"><span class="toc-number">0.2.</span> <span class="toc-text">动画演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA-1"><span class="toc-number">0.3.</span> <span class="toc-text">代码演示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-number"></span> <span class="toc-text">5.归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4-2"><span class="toc-number">0.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E6%BC%94%E7%A4%BA-2"><span class="toc-number">0.2.</span> <span class="toc-text">动画演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA-2"><span class="toc-number">0.3.</span> <span class="toc-text">代码演示</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0"><span class="toc-number">0.3.0.0.1.</span> <span class="toc-text">递归实现</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0"><span class="toc-number">0.3.0.0.2.</span> <span class="toc-text">非递归实现</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-number"></span> <span class="toc-text">6.快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4-3"><span class="toc-number">0.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E6%BC%94%E7%A4%BA-3"><span class="toc-number">0.2.</span> <span class="toc-text">动画演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA-3"><span class="toc-number">0.3.</span> <span class="toc-text">代码演示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="toc-number"></span> <span class="toc-text">7.堆排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4-4"><span class="toc-number">0.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E6%BC%94%E7%A4%BA-4"><span class="toc-number">0.2.</span> <span class="toc-text">动画演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA-4"><span class="toc-number">0.3.</span> <span class="toc-text">代码演示</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1650462216451"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>了解 面向过程 与 面向对象 - Lovsog&#39;s blog</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" type="image/png" />
+    <meta name="description" content="大一时实验室学长的问题….">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解 面向过程 与 面向对象">
+<meta property="og:url" content="https://art0white.github.io/2021/09/25/5/index.html">
+<meta property="og:site_name" content="Lovsog&#39;s blog">
+<meta property="og:description" content="大一时实验室学长的问题….">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-25T05:11:05.000Z">
+<meta property="article:modified_time" content="2021-09-28T12:38:06.169Z">
+<meta property="article:author" content="Lovsog">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"
+    />
+    
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1650462216436">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1650462216436">
+    <link rel="stylesheet" href="/css/style.css?v=1650462216436">
+     
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="Lovsog" class="mdui-btn mdui-btn-icon"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Lovsog">
+            <img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog" alt="Lovsog">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>10</div>
+        <div><span>Tags</span>9</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=https://art0white.github.io/" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=Y19YGK7B" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://www.bilibili.com/" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/Art0white/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web/" style="font-size: 13.33px;">web</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 16.67px;">前端</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a>
+    </div>
+    
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 Lovsog
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a href="https://icp.gov.moe/?keyword=20210704" target="_blank">萌ICP备20210704号</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-fancybox="gallery" src="https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png" alt="了解 面向过程 与 面向对象" loading="lazy">
+              <h1>了解 面向过程 与 面向对象</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年09月25日</a>
+</div>
+
+      <blockquote>
+<p>大一时实验室学长的问题….</p>
+</blockquote>
+<span id="more"></span>
+
+
+
+<h2 id="1-什么是面向过程？"><a href="#1-什么是面向过程？" class="headerlink" title="1.什么是面向过程？"></a>1.什么是面向过程？</h2><p><strong>概述: 自上而下用函数计算的编程模式.</strong><br>把问题分解成一个个步骤，每个步骤用函数去实现，依次调用函数计算。</p>
+<h2 id="2-什么是面向对象？"><a href="#2-什么是面向对象？" class="headerlink" title="2.什么是面向对象？"></a>2.什么是面向对象？</h2><p><strong>概述: 将事务高度抽象化的编程模式.</strong><br>把问题分解成一个个步骤，将问题中的一个个事物抽象化为一个个对象，再将对象调用于分好的步骤里组合来解决问题。</p>
+<h2 id="3-举例区分"><a href="#3-举例区分" class="headerlink" title="3.举例区分"></a>3.举例区分</h2><blockquote>
+<p><strong>案例：有一辆汽车，时速为100km/h，行驶在100km的桥上，求多久能跑完？</strong></p>
+</blockquote>
+<p><strong>面向过程：</strong></p>
+<pre><code class="c">int main()
+&#123;
+    int time=100/100;
+    print(&quot;%d\n&quot;, time);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>面向对象：</strong></p>
+<pre><code class="javascript">        var car = &#123;
+            speed: 100,
+            run:function(road)&#123;
+                return road.length / this.speed;
+            &#125;
+        &#125;
+        var qiao = &#123;
+            length:100
+        &#125;
+        var hours = car.run(qiao);
+        alert(hours);
+</code></pre>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>Lovsog<br>
+        <strong>Link：</strong><a href="https://art0white.github.io/2021/09/25/5/" title="https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;5&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;5&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/java/" rel="tag">java</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'cd32a33ff05bd3a4103e',
+        clientSecret: 'a77888ad29571106661241bdb6ae255e2f00ae08',
+        id: window.location.pathname,
+        repo: 'art0white.github.io',
+        owner: 'Art0white',
+        admin: 'Art0white'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">1.什么是面向过程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">2.什么是面向对象？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%BE%E4%BE%8B%E5%8C%BA%E5%88%86"><span class="toc-number">3.</span> <span class="toc-text">3.举例区分</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1650462216440"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

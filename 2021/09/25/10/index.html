@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>OJ刷题所得经验，偶吼吼！ - Lovsog&#39;s blog</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" type="image/png" />
+    <meta name="description" content="好好学习算法！🐱‍🏍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OJ刷题所得经验，偶吼吼！">
+<meta property="og:url" content="https://art0white.github.io/2021/09/25/10/index.html">
+<meta property="og:site_name" content="Lovsog&#39;s blog">
+<meta property="og:description" content="好好学习算法！🐱‍🏍">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-25T05:21:53.000Z">
+<meta property="article:modified_time" content="2021-09-28T12:39:01.191Z">
+<meta property="article:author" content="Lovsog">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"
+    />
+    
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1650462216415">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1650462216415">
+    <link rel="stylesheet" href="/css/style.css?v=1650462216415">
+     
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="Lovsog" class="mdui-btn mdui-btn-icon"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Lovsog">
+            <img src="https://img10.360buyimg.com/ddimg/jfs/t1/198391/20/10052/60439/614ec359Ec7d3720c/e665b12ed7576ffd.png" alt="Lovsog" alt="Lovsog">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>10</div>
+        <div><span>Tags</span>9</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=https://art0white.github.io/" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=Y19YGK7B" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://www.bilibili.com/" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/Art0white/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web/" style="font-size: 13.33px;">web</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 16.67px;">前端</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a>
+    </div>
+    
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 Lovsog
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a href="https://icp.gov.moe/?keyword=20210704" target="_blank">萌ICP备20210704号</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-fancybox="gallery" src="https://img11.360buyimg.com/ddimg/jfs/t1/94445/22/17739/2302303/614ec613E15768992/272f93daa8dba197.png" alt="OJ刷题所得经验，偶吼吼！" loading="lazy">
+              <h1>OJ刷题所得经验，偶吼吼！</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年09月25日</a>
+</div>
+
+      <blockquote>
+<p>好好学习算法！🐱‍🏍</p>
+</blockquote>
+<span id="more"></span>
+
+
+
+<h2 id="一、OJ错误类型"><a href="#一、OJ错误类型" class="headerlink" title="一、OJ错误类型"></a>一、OJ错误类型</h2><h3 id="答案正确（Acepted，-AC）"><a href="#答案正确（Acepted，-AC）" class="headerlink" title="答案正确（Acepted， AC）"></a>答案正确（Acepted， AC）</h3><p>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;恭喜你！所提交的代码通过了数据！这个评测结果应该是大家最喜欢见到的，也非常好理解。如果是单点测试，那么没通过一组数据，就会返回一个Accepted；如果是多点测试，那么只有当通过了所有数据时，才会返回Accepted。</p>
+<h3 id="编译错误（Compile-Error，CE）"><a href="#编译错误（Compile-Error，CE）" class="headerlink" title="编译错误（Compile Error，CE）"></a>编译错误（Compile Error，CE）</h3><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很显然，如果代码没有办法通过编译，那么就会返回Compile Error。这是要先注意时不是选错了语言，然后再看本地的编译器能不能编译通过刚刚提交的代码，修改轴再次提交即可。</p>
+<h3 id="答案错误（Wrong-Answer，-WA）"><a href="#答案错误（Wrong-Answer，-WA）" class="headerlink" title="答案错误（Wrong Answer， WA）"></a>答案错误（Wrong Answer， WA）</h3><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“答案错误”时比较令人懊恼的结果，因为这说明代码有漏洞或者算法根本就是错误的，只是恰好能过样例而已。不过有时可能时应为输出了一些调试信息导致的，那就删除多余的输入内容再输出。当然，大部分情况下都需要认真检测代码逻辑有没有问题。</p>
+<h3 id="运行超时（Time-Limit-Exceeded，-TLE）"><a href="#运行超时（Time-Limit-Exceeded，-TLE）" class="headerlink" title="运行超时（Time Limit Exceeded， TLE）"></a>运行超时（Time Limit Exceeded， TLE）</h3><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于每道题都会规定程序运行时间的上限，因此当超过这个限制时就会返回TLE。一般来说，这一结果可能是由算法的时间复杂度过大而导致的，当然也可能时某组数据使得代码中某处地方死循环掉了。因此，要仔细思考最坏时间复杂度是多少，或者检查代码中是否可能数显特殊数据死循环的情况。</p>
+<h3 id="运行错误（Runtime-Error，-RE）"><a href="#运行错误（Runtime-Error，-RE）" class="headerlink" title="运行错误（Runtime Error， RE）"></a>运行错误（Runtime Error， RE）</h3><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这一结果的可能性非常多，常见的有段错误（直接的原因时非法访问了内存，例如数组越界，指针乱指），浮点错误（例如除数为0，模数为0），递归爆栈（一般由递归时层数过深导致的）等。一般来说，需要先检查数组大小是否比题目的数据范围大，然后再去检查可不可能有特殊数据可以使除数或者模数为0，有递归的情况则检查是否在大数据时递归层数太深。</p>
+<h3 id="内存超限（Memory-Limit-Exceed，MLE）"><a href="#内存超限（Memory-Limit-Exceed，MLE）" class="headerlink" title="内存超限（Memory Limit Exceed，MLE）"></a>内存超限（Memory Limit Exceed，MLE）</h3><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每道题目都有规定程序使用的空间上限，因此如果程序中使用太多的空间，则会返回MLE，例如数组太大一般最容易导致这个结果。</p>
+<h3 id="格式错误（Presentation-Error，-PE）"><a href="#格式错误（Presentation-Error，-PE）" class="headerlink" title="格式错误（Presentation Error， PE）"></a>格式错误（Presentation Error， PE）</h3><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这应该是最接近Accepted 的错误了，基本上由多输出了空格或者换行导致的，稍作修改即可。</p>
+<h3 id="输出超限（Output-Limit-Exceeded，-OLE）"><a href="#输出超限（Output-Limit-Exceeded，-OLE）" class="headerlink" title="输出超限（Output Limit Exceeded， OLE）"></a>输出超限（Output Limit Exceeded， OLE）</h3><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果程序输出了过量的内容（一般是指过量非常多），那么就会返回OLE。一般是由输出了大量的调试信息或者特殊数据导致的死循环输出导致的。</p>
+<h2 id="二、技巧"><a href="#二、技巧" class="headerlink" title="二、技巧"></a>二、技巧</h2><h3 id="1-cin与scanf的区别"><a href="#1-cin与scanf的区别" class="headerlink" title="1. cin与scanf的区别"></a>1. cin与scanf的区别</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据量大时scanf效率高，因为scanf是格式化输入是实时的，而cin是字符流输入，需要先存入缓冲区再输入，scanf需要自己写格式，是一种格式化输入，scanf是用指针操作的，没有类型安全机制，比如一个char类型数据你就可以用%f获得输入，而不会报错，但在运行时会出现异常。cin是自动判断你的变量类型，比如一个char数据只能用默认的char方法取数据。 cin通过缓冲区输入，即输入首先存入缓冲区，等到缓冲区满时再自动刷新，这样cin的效率就很低了，但是保证了安全。</p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>Lovsog<br>
+        <strong>Link：</strong><a href="https://art0white.github.io/2021/09/25/10/" title="https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;10&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;art0white.github.io&#x2F;2021&#x2F;09&#x2F;25&#x2F;10&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'cd32a33ff05bd3a4103e',
+        clientSecret: 'a77888ad29571106661241bdb6ae255e2f00ae08',
+        id: window.location.pathname,
+        repo: 'art0white.github.io',
+        owner: 'Art0white',
+        admin: 'Art0white'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81OJ%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">一、OJ错误类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%94%E6%A1%88%E6%AD%A3%E7%A1%AE%EF%BC%88Acepted%EF%BC%8C-AC%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">答案正确（Acepted， AC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%EF%BC%88Compile-Error%EF%BC%8CCE%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">编译错误（Compile Error，CE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%94%E6%A1%88%E9%94%99%E8%AF%AF%EF%BC%88Wrong-Answer%EF%BC%8C-WA%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">答案错误（Wrong Answer， WA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E8%B6%85%E6%97%B6%EF%BC%88Time-Limit-Exceeded%EF%BC%8C-TLE%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">运行超时（Time Limit Exceeded， TLE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%94%99%E8%AF%AF%EF%BC%88Runtime-Error%EF%BC%8C-RE%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">运行错误（Runtime Error， RE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E8%B6%85%E9%99%90%EF%BC%88Memory-Limit-Exceed%EF%BC%8CMLE%EF%BC%89"><span class="toc-number">1.6.</span> <span class="toc-text">内存超限（Memory Limit Exceed，MLE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E9%94%99%E8%AF%AF%EF%BC%88Presentation-Error%EF%BC%8C-PE%EF%BC%89"><span class="toc-number">1.7.</span> <span class="toc-text">格式错误（Presentation Error， PE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%B6%85%E9%99%90%EF%BC%88Output-Limit-Exceeded%EF%BC%8C-OLE%EF%BC%89"><span class="toc-number">1.8.</span> <span class="toc-text">输出超限（Output Limit Exceeded， OLE）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8A%80%E5%B7%A7"><span class="toc-number">2.</span> <span class="toc-text">二、技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cin%E4%B8%8Escanf%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.</span> <span class="toc-text">1. cin与scanf的区别</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1650462216417"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>
